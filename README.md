@@ -1,64 +1,54 @@
 🔬 OOE Virtual Physics Lab
 
-Advanced Simulation Suite for Geometric Optics & Electromagnetic Waves
-👥 Development Team
+High-Performance Optics & EM Wave Simulations
+👥 The Development Team
 
-    [Your Name] — Team Lead & Software Architect
+    BERRAF Noha
+    KHELIL Ikram 
+    BAKIRI Soundous
+    ABDENNOUZ Khadidja
+    MOUHEB Maya
+🚀 Live Access
 
-    [Partner 1] — Physics Researcher & Documentation
+Access the interactive simulation environment directly via GitHub Pages:
+👉 Launch Virtual Physics Lab
+📁 Laboratory Modules
 
-    [Partner 2] — Algorithm Developer
+This repository is organized into three specialized research tracks. Each module contains its own dedicated source code and scientific documentation.
+Track 4: Water Surface Caustics
 
-📑 Project Overview
+    Objective: Visualizing light convergence patterns on fluid surfaces.
 
-The OOE-Virtual-Lab is an integrated simulation environment designed to bridge the gap between theoretical physics and computer graphics. This project focuses on the precise modeling of light behavior and wave dynamics using efficient JavaScript and Python implementations.
-🌌 Track 4: Water Surface Caustics
+    Key Tech: HTML5 Canvas, Additive Blending, Wave Interference.
 
-An advanced graphics simulation demonstrating light convergence at the bottom of a dynamic fluid surface.
+Track 5: The Diverging Peephole
 
-    Physics Core: Snell's Law and Wave Intersections.
+    Objective: Mathematical modeling of field-of-view expansion via diverging lenses.
 
-    Technical Implementation: Additive Blending and Ray Tracing.
+    Key Tech: Python-based Thin Lens analysis.
 
-👁️ Track 5 (Optics): The Peephole Study
+Track 5: Spy Antenna Pattern
 
-A mathematical and visual analysis of diverging lenses used to increase the angular field of view.
+    Objective: Identifying signal leakage zones using Poynting Vector analysis.
 
-    Physics Core: Thin Lens Equation and Transverse Magnification.
+    Key Tech: EM Wave Radiation plotting (Python).
 
-    Technical Implementation: Calculation of virtual image positioning.
+🛠️ Requirements & Setup
 
-📡 Track 5 (EM Waves): The Spy Antenna
+    Web Environment: Any modern browser (Chrome/Edge/Firefox) for the Live Lab.
 
-Optimization of energy capture and identification of signal leakage zones.
+    Calculation Engine: Python 3.x with numpy and matplotlib for Track 5 scripts.
 
-    Physics Core: Poynting Vector S=E×H and Radiation Patterns.
+    Documentation: All physics formulas are rendered in LaTeX within sub-folder READMEs.
 
-    Technical Implementation: Polar gain analysis G(θ).
+📜 Academic Compliance
 
-📐 Physics Formulas Used
+This project satisfies the criteria set by Dr. CHEGGOU for the "Virtual Physics Lab" objective, covering:
 
-To ensure scientific accuracy (Criterion 1 & 2), the following laws are strictly implemented:
-1. Law of Refraction (Snell's Law)
+    ✅ Snell's Law exact calculations.
 
-Used to calculate exact ray paths through variable media:
-n1​sin(θ1​)=n2​sin(θ2​)
-2. Thin Lens Equation
+    ✅ Wave Dynamics (λ,f,v) visualization.
 
-Used for the diverging lens (f′<0) in the peephole simulation:
-v1​−u1​=f′1​
-3. Wave Dynamics & Velocity
+    ✅ Interactive Measurement Tools.
 
-Mapping the relationship between refractive index (n) and phase velocity (v):
-v=nc​andλ=fv​
-🚀 Live Deployment
-
-The interactive simulations are deployed via GitHub Pages for real-time evaluation:
-👉 Click Here to Access the Virtual Lab
-🛠️ How to Use the Lab
-
-    Navigate: Use the main dashboard to select a specific Physics Track.
-
-    Interact: Adjust sliders to modify refractive indices or wave amplitudes.
-
-    Analyze: Use the built-in measurement tools to verify the calculations against the visual output.
+    ✅ Clean JS & Python code standards.
