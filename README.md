@@ -27,7 +27,7 @@ All members contributed equally to the Research, Development, Physics Logic, and
 * **Implementation:** [Insert Tech: e.g., Python/Matplotlib or JS] visualization of mathematical envelopes.
 * **Applications:** Solar concentrators, underwater optics, and gemstone "fire" analysis.
 
-### 👁️ [Track 2: Diverging Lens Explorer](./Track-5-peephole/)
+### 👁️ [Track 2: Diverging Lens Explorer](./Track-5-Peephole/)
 * **Physics:** Analysis of virtual image formation, focal lengths ($f' < 0$), and wide-angle ray tracing.
 * **Implementation:** Interactive HTML5/JS engine with real-time canvas rendering.
 * **Applications:** Door Peepholes, Myopia Correction, and Laser Beam Expanders.
