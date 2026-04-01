@@ -1,54 +1,55 @@
-🔬 OOE Virtual Physics Lab
+# 📡 Integrated Engineering Laboratory: Unified Mission
+### **Instructor:** Dr. CHEGGOU | **Group Project 2026**
 
-High-Performance Optics & EM Wave Simulations
-👥 The Development Team
+---
 
-    BERRAF Noha
-    KHELIL Ikram 
-    BAKIRI Soundous
-    ABDENNOUZ Khadidja
-    MOUHEB Maya
-🚀 Live Access
+## 📖 Project Overview
+This repository contains a suite of three interactive engineering simulations developed collectively by our team. Our mission was to bridge the gap between **Geometrical Optics** and **Electromagnetic Signal Security**, specifically focusing on wave divergence, energy flux via the Poynting Vector, and unintended signal interception.
 
-Access the interactive simulation environment directly via GitHub Pages:
-👉 Launch Virtual Physics Lab
-📁 Laboratory Modules
+---
 
-This repository is organized into three specialized research tracks. Each module contains its own dedicated source code and scientific documentation.
-Track 4: Water Surface Caustics
+## 👥 The Engineering Team
+All members contributed equally to the Research, Development, Physics Logic, and UI/UX Design across all three tracks:
 
-    Objective: Visualizing light convergence patterns on fluid surfaces.
+* **BERRAF Noha**
+* **KHELIL Ikram**
+* **BAKIRI Soundous**
+* **ABDENOUZ Khadidja**
+* **MOUHEB Maya**
 
-    Key Tech: HTML5 Canvas, Additive Blending, Wave Interference.
+---
 
-Track 5: The Diverging Peephole
+## 📂 Project Structure & Navigation
+*Click the links below to navigate to the specific laboratory modules.*
 
-    Objective: Mathematical modeling of field-of-view expansion via diverging lenses.
+### 👁️ [Track 1: Diverging Lens Explorer](./Track-1-Diverging-Lens/)
+* **Physics:** Analysis of virtual image formation, focal lengths ($f' < 0$), and wide-angle ray tracing.
+* **Implementation:** Interactive HTML5/JS engine with real-time canvas rendering.
+* **Applications:** Door Peepholes, Myopia Correction, and Laser Beam Expanders.
 
-    Key Tech: Python-based Thin Lens analysis.
+### 📡 [Track 2: Spy Antenna & Poynting Flux](./Track-2-Spy-Antenna/)
+* **Physics:** EM Security and Signal Leakage Detection using the Poynting Vector $\vec{S} = \vec{E} \times \vec{H}$.
+* **Implementation:** Python Streamlit Dashboard with interactive polar plots and 2D field intensity heatmaps.
+* **Applications:** Side-Lobe Auditing and Interception Risk Assessment.
 
-Track 5: Spy Antenna Pattern
+### 🛰️ [Track 3: Insert_Name_Here](./Track-3-Folder-Name/)
+* **Physics:** Comprehensive study of [Insert Core Physics Concept].
+* **Implementation:** Advanced [Insert Language/Framework] simulation for data visualization.
+* **Applications:** [Application 1] and [Application 2].
 
-    Objective: Identifying signal leakage zones using Poynting Vector analysis.
+---
 
-    Key Tech: EM Wave Radiation plotting (Python).
+## 🛠️ Installation & Execution Guide
 
-🛠️ Requirements & Setup
+### 🌐 For Web-Based Modules (HTML/JS)
+No installation is required. 
+1. Navigate to the folder (e.g., `Track-1-Diverging-Lens`).
+2. Double-click `index.html` to launch the simulation in your default browser.
 
-    Web Environment: Any modern browser (Chrome/Edge/Firefox) for the Live Lab.
+### 🐍 For Python-Based Modules (Streamlit)
+To run the Antenna Leakage or Python-based simulations, follow these steps:
 
-    Calculation Engine: Python 3.x with numpy and matplotlib for Track 5 scripts.
-
-    Documentation: All physics formulas are rendered in LaTeX within sub-folder READMEs.
-
-📜 Academic Compliance
-
-This project satisfies the criteria set by Dr. CHEGGOU for the "Virtual Physics Lab" objective, covering:
-
-    ✅ Snell's Law exact calculations.
-
-    ✅ Wave Dynamics (λ,f,v) visualization.
-
-    ✅ Interactive Measurement Tools.
-
-    ✅ Clean JS & Python code standards.
+1. **Install Dependencies:**
+   Open your terminal or command prompt and run:
+   ```bash
+   pip install streamlit numpy plotly pandas
