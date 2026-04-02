@@ -1,6 +1,6 @@
 # Track 4: Water Surface Caustics & 3D Refraction
 
-## 🌊 Project Goal
+## 🌊 Project Goal 
 To simulate high-fidelity "Light Web" patterns (Caustics) on a pool floor by modeling the interaction between a complex 3D wavy surface and incident light rays.
 
 > ### ⚠️ TECHNICAL NOTE: 3D Vector Refraction
