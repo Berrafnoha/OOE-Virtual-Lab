@@ -1,11 +1,3 @@
-"""
-📡 Antenna Signal Leakage Detection System
-==========================================
-A professional simulation tool for analyzing antenna radiation patterns,
-detecting unintended signal leakage (side lobes), and assessing security risks.
-
-Run with:  streamlit run app.py
-"""
 
 import streamlit as st
 import numpy as np
@@ -216,7 +208,7 @@ def compute_metrics(
     """
     Compute energy metrics from the radiation pattern.
     """
-    total_energy   = float(np.trapz(gain, theta))
+    total_energy   = float(np.trapezoid(gain, theta))
     main_idx       = int(np.argmax(gain))
     main_gain      = float(gain[main_idx])
     main_gain_dB   = 10 * np.log10(main_gain + 1e-12)
@@ -224,7 +216,7 @@ def compute_metrics(
     # Main lobe energy: integrate ±HPBW/2 region
     half_power    = main_gain / 2
     in_main       = gain >= half_power
-    main_energy   = float(np.trapz(gain * in_main, theta))
+    main_energy   = float(np.trapezoid(gain * in_main, theta))
 
     leaked_energy = float(sum(z["gain"] for z in leakage_zones))
     efficiency    = (main_energy / (total_energy + 1e-12)) * 100
@@ -436,7 +428,7 @@ def energy_bar_chart(
     edges  = np.linspace(0, 2 * np.pi, n_bins + 1)
     labels = [f"{int(i * sector_size)}°" for i in range(n_bins)]
     energies = [
-        float(np.trapz(
+        float(np.trapezoid(
             gain[(theta >= edges[i]) & (theta < edges[i + 1])],
             theta[(theta >= edges[i]) & (theta < edges[i + 1])],
         ))
@@ -495,8 +487,8 @@ def poynting_heatmap(
             [1,   "#e74c3c"],
         ],
         colorbar=dict(
-            title="|S| (a.u.)", tickfont=dict(color="#a0c4e8"),
-            titlefont=dict(color="#a0c4e8"),
+            tickfont=dict(color="#a0c4e8"),
+            title=dict(text="|S| (a.u.)", font=dict(color="#a0c4e8")),
         ),
         hovertemplate="x=%{x:.2f}  y=%{y:.2f}<br>|S|=%{z:.3f}<extra></extra>",
     ))
@@ -1025,3 +1017,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+
