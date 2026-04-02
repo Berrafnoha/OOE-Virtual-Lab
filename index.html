@@ -1,21 +1,69 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>OOE Virtual Lab</title>
+    <meta charset="UTF-8">
+    <title>OOE Virtual Physics Lab</title>
     <style>
-        body { background: #111; color: white; font-family: sans-serif; text-align: center; padding: 50px; }
-        .btn { display: block; width: 300px; margin: 20px auto; padding: 20px; background: #00faff; color: black; text-decoration: none; border-radius: 10px; font-weight: bold; }
-        .btn:hover { background: #0088aa; }
+        body { background: #0e1117; color: white; font-family: 'Segoe UI', sans-serif; text-align: center; }
+        .container { max-width: 800px; margin: auto; padding: 20px; }
+        canvas { background: #161b22; border: 2px solid #30363d; border-radius: 8px; margin: 20px 0; }
+        .controls { background: #161b22; padding: 20px; border-radius: 10px; display: inline-block; }
+        .btn-box { margin-top: 30px; display: flex; justify-content: center; gap: 10px; }
+        .link-btn { padding: 10px 20px; background: #238636; color: white; text-decoration: none; border-radius: 5px; font-weight: bold; }
     </style>
 </head>
 <body>
-    <h1>🔬 OOE Integrated Virtual Lab</h1>
-    <p>Select a Lab Module to Begin:</p>
-    
-    <a href="./Track-1-Diverging-Lens/index.html" class="btn">Track 1: Diverging Lens</a>
-    
-    <p><i>Note: The following tracks require Python/Streamlit. See README for Live Links.</i></p>
-    <div class="btn" style="background:#555">Track 2: Antenna (See Streamlit Link)</div>
-    <div class="btn" style="background:#555">Track 3: Caustics (See Streamlit Link)</div>
+    <div class="container">
+        <h1>🔬 OOE Integrated Virtual Lab</h1>
+        <p>Phase 1: Geometrical Optics (Snell's Law & Lenses)</p>
+
+        <canvas id="opticsCanvas" width="700" height="300"></canvas>
+        
+        <div class="controls">
+            <label>Focal Length (f'): </label>
+            <input type="range" id="focalSlider" min="-200" max="-50" value="-100">
+            <span id="focalVal">-100</span>px
+        </div>
+
+        <div class="btn-box">
+            <p><b>Switch to Python Tracks:</b></p>
+            <a href="https://share.streamlit.io/your-username/your-repo/main/antenna_app.py" class="link-btn" style="background:#00faff; color:black;">📡 Antenna Leakage</a>
+            <a href="https://share.streamlit.io/your-username/your-repo/main/caustics_app.py" class="link-btn" style="background:#ff4b4b;">🌊 Pool Caustics</a>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('opticsCanvas');
+        const ctx = canvas.getContext('2d');
+        const focalSlider = document.getElementById('focalSlider');
+        const focalVal = document.getElementById('focalVal');
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            let f = parseInt(focalSlider.value);
+            focalVal.innerText = f;
+
+            // Draw Lens (Diverging)
+            ctx.strokeStyle = "#00faff";
+            ctx.lineWidth = 3;
+            ctx.beginPath();
+            ctx.moveTo(350, 50); ctx.lineTo(350, 250); // Simple lens line
+            ctx.stroke();
+
+            // Draw Rays (Snell's Law Logic)
+            ctx.strokeStyle = "rgba(255, 255, 255, 0.5)";
+            ctx.lineWidth = 1;
+            for(let y = 100; y <= 200; y += 20) {
+                ctx.beginPath();
+                ctx.moveTo(0, y); // Incoming parallel ray
+                ctx.lineTo(350, y);
+                // Diverging math: y_out = y_in + (y_in - center) * distance / f
+                ctx.lineTo(700, y + (y - 150) * 350 / Math.abs(f)); 
+                ctx.stroke();
+            }
+            requestAnimationFrame(draw);
+        }
+        draw();
+    </script>
 </body>
 </html>
